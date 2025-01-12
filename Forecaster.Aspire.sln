@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{90CD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{D5159210-057F-4F97-8785-E5AB415A5F9F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{920BA48B-7179-49BA-9F33-D506305BC441}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "orchestration", "orchestration", "{920BA48B-7179-49BA-9F33-D506305BC441}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "forecaster", "forecaster", "{F94D5CA2-24A3-4501-B174-A8033DEE7FD9}"
 EndProject
