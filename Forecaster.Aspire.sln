@@ -2,15 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.AppHost", "Forecaster.Aspire.AppHost\Forecaster.Aspire.AppHost.csproj", "{CF8AB4DD-F10C-497F-88AC-19670A1951D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.AppHost", "orchestration\Forecaster.Aspire.AppHost\Forecaster.Aspire.AppHost.csproj", "{CF8AB4DD-F10C-497F-88AC-19670A1951D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.ServiceDefaults", "Forecaster.Aspire.ServiceDefaults\Forecaster.Aspire.ServiceDefaults.csproj", "{CB63C008-7193-448D-9C78-900B3FD2C7D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.ServiceDefaults", "orchestration\Forecaster.Aspire.ServiceDefaults\Forecaster.Aspire.ServiceDefaults.csproj", "{CB63C008-7193-448D-9C78-900B3FD2C7D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.ApiService", "Forecaster.Aspire.ApiService\Forecaster.Aspire.ApiService.csproj", "{08A0D7C0-B944-4356-A40D-99D8DECCD385}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.ApiService", "backend\forecaster\Forecaster.Aspire.ApiService\Forecaster.Aspire.ApiService.csproj", "{08A0D7C0-B944-4356-A40D-99D8DECCD385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.Web", "Forecaster.Aspire.Web\Forecaster.Aspire.Web.csproj", "{71D4FBBD-7D1B-4DF9-8564-7148B624F68D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.Web", "frontend\Forecaster.Aspire.Web\Forecaster.Aspire.Web.csproj", "{71D4FBBD-7D1B-4DF9-8564-7148B624F68D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.Tests", "Forecaster.Aspire.Tests\Forecaster.Aspire.Tests.csproj", "{9F230C79-46C6-4AFA-8D77-91BB0830C852}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Aspire.Tests", "orchestration\Forecaster.Aspire.Tests\Forecaster.Aspire.Tests.csproj", "{9F230C79-46C6-4AFA-8D77-91BB0830C852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{90CDDD43-4651-4BEE-AE6D-812FC142424E}"
 EndProject
