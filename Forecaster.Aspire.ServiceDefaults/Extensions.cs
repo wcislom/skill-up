@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ServiceDiscovery;
-using OpenTelemetry;
+using OpenTelemetry;\
 using OpenTelemetry.Metrics;
 using OpenTelemetry.Trace;
 
