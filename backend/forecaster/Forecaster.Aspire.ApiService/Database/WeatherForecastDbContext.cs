@@ -9,6 +9,13 @@ namespace Forecaster.ApiService.Database
             : base(options)
         {
         }
-       // public DbSet<WeatherForecast> WeatherForecasts { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(WeatherForecastDbContext).Assembly);
+        }
+
+         public DbSet<WeatherForecast> WeatherForecasts { get; set; }
     }
 }
