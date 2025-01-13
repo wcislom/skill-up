@@ -12,7 +12,8 @@ builder.Services.AddProblemDetails();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "database");
+builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster");
+
 
 var app = builder.Build();
 
@@ -22,6 +23,12 @@ app.UseExceptionHandler();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var dbContext = scope.ServiceProvider.GetRequiredService<WeatherForecastDbContext>();
+        dbContext.Database.EnsureCreated();
+    }
 }
 
 string[] summaries = ["Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"];

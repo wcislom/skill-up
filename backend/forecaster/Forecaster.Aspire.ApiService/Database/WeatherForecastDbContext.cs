@@ -9,6 +9,6 @@ namespace Forecaster.ApiService.Database
             : base(options)
         {
         }
-        public DbSet<WeatherForecast> WeatherForecasts { get; set; }
+       // public DbSet<WeatherForecast> WeatherForecasts { get; set; }
     }
 }
