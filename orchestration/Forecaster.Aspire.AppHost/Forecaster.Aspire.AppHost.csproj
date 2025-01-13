@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\backend\forecaster\Forecaster.Aspire.ApiService\Forecaster.Aspire.ApiService.csproj" />
+    <ProjectReference Include="..\..\backend\forecaster\Forecaster.Aspire.ApiService\Forecaster.ApiService.csproj" />
     <ProjectReference Include="..\..\frontend\Forecaster.Aspire.Web\Forecaster.Aspire.Web.csproj" />
   </ItemGroup>
 

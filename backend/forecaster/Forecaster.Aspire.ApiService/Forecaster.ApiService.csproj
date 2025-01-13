@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\orchestration\Forecaster.Aspire.ServiceDefaults\Forecaster.Aspire.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\Forecaster.Core\Forecaster.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
   </ItemGroup>
 
