@@ -1,5 +1,6 @@
 using Forecaster.ApiService.Database;
 using Forecaster.Core;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +15,6 @@ builder.Services.AddOpenApi();
 
 builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster");
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,7 +27,8 @@ if (app.Environment.IsDevelopment())
     using (var scope = app.Services.CreateScope())
     {
         var dbContext = scope.ServiceProvider.GetRequiredService<WeatherForecastDbContext>();
-        dbContext.Database.EnsureCreated();
+        // shouldn't be used with migrations
+        // dbContext.Database.EnsureCreated();
     }
 }
 
@@ -38,7 +39,7 @@ app.MapGet("/weatherforecast", () =>
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
-            index,  
+            index,
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
             Random.Shared.Next(-20, 55),
             summaries[Random.Shared.Next(summaries.Length)]
@@ -51,4 +52,3 @@ app.MapGet("/weatherforecast", () =>
 app.MapDefaultEndpoints();
 
 app.Run();
-
