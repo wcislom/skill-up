@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Forecaster.ApiService.Database.Configurations
+namespace Forecaster.Infrastructure.Database.Configurations
 {
     public class WeatherForecastTypeConfiguration : IEntityTypeConfiguration<WeatherForecast>
     {

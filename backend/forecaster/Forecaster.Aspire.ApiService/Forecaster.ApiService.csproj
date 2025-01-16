@@ -8,21 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\orchestration\Forecaster.Aspire.ServiceDefaults\Forecaster.Aspire.ServiceDefaults.csproj" />
-    <ProjectReference Include="..\Forecaster.Core\Forecaster.Core.csproj" />
+    <ProjectReference Include="..\Forecaster.Infrastructure\Forecaster.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Database\Migrations\" />
   </ItemGroup>
 
 </Project>

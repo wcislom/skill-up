@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workers", "workers", "{7E93
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migration", "backend\workers\Migration\Migration.csproj", "{73703833-F166-4DAE-961D-13A1F12FF75B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Infrastructure", "backend\forecaster\Forecaster.Infrastructure\Forecaster.Infrastructure.csproj", "{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{73703833-F166-4DAE-961D-13A1F12FF75B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73703833-F166-4DAE-961D-13A1F12FF75B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73703833-F166-4DAE-961D-13A1F12FF75B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,5 +80,6 @@ Global
 		{EC3CB70A-2B6E-41C0-9F5A-054465D1266D} = {F94D5CA2-24A3-4501-B174-A8033DEE7FD9}
 		{7E934BE4-B0E3-45DC-846B-962F90E6A513} = {90CDDD43-4651-4BEE-AE6D-812FC142424E}
 		{73703833-F166-4DAE-961D-13A1F12FF75B} = {7E934BE4-B0E3-45DC-846B-962F90E6A513}
+		{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3} = {F94D5CA2-24A3-4501-B174-A8033DEE7FD9}
 	EndGlobalSection
 EndGlobal

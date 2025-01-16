@@ -1,7 +1,7 @@
 ﻿using Forecaster.Core;
 using Microsoft.EntityFrameworkCore;
 
-namespace Forecaster.ApiService.Database
+namespace Forecaster.Infrastructure.Database
 {
     public class WeatherForecastDbContext : DbContext
     {
