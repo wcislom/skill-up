@@ -10,7 +10,7 @@ namespace Forecaster.Infrastructure.Database
 {
     public static class Extensions
     {
-        public static void AddDatabase(this IHostApplicationBuilder builder)
+        public static void AddForecasterDatabase(this IHostApplicationBuilder builder)
         {
             builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster");
 

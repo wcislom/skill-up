@@ -1,7 +1,8 @@
-namespace Migration
+namespace MigrationService
 {
     public class Worker : BackgroundService
     {
+        public static string Name = "MigrationService";
         private readonly ILogger<Worker> _logger;
 
         public Worker(ILogger<Worker> logger)

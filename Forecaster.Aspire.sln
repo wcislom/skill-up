@@ -24,7 +24,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Core", "backend\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workers", "workers", "{7E934BE4-B0E3-45DC-846B-962F90E6A513}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migration", "backend\workers\Migration\Migration.csproj", "{73703833-F166-4DAE-961D-13A1F12FF75B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationService", "backend\workers\MigrationService\MigrationService.csproj", "{73703833-F166-4DAE-961D-13A1F12FF75B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forecaster.Infrastructure", "backend\forecaster\Forecaster.Infrastructure\Forecaster.Infrastructure.csproj", "{99CC7B44-EFA5-491B-B3A3-5BAD819D61C3}"
 EndProject

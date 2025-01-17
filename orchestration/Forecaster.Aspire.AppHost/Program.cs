@@ -10,7 +10,7 @@ var db = sql.AddDatabase("forecaster");
 
 var apiService = builder.AddProject<Projects.Forecaster_ApiService>("apiservice").WithReference(db).WaitFor(db);
 
-builder.AddProject<Projects.Migration>("migration-worker").WithReference(db).WaitFor(db);
+builder.AddProject<Projects.MigrationService>("migration-worker").WithReference(db).WaitFor(db);
 
 builder.AddProject<Projects.Forecaster_Aspire_Web>("webfrontend")
     .WithExternalHttpEndpoints()
