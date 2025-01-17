@@ -13,5 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\orchestration\Forecaster.Aspire.ServiceDefaults\Forecaster.Aspire.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\forecaster\Forecaster.Infrastructure\Forecaster.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
