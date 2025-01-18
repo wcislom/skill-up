@@ -1,5 +1,5 @@
 ﻿1. Add migration 
-dotnet ef migrations add InitialCreate -o Database\Migrations
+dotnet ef migrations add RenamesIdColumn  -o Database\Migrations --project ../Forecaster.Infrastructure
 
 2. Apply migration
 dotnet ef database update
