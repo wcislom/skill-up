@@ -1,5 +1,6 @@
 ﻿using Forecaster.Core;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Forecaster.Infrastructure.Database
 {

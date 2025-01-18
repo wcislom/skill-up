@@ -5,3 +5,12 @@ dotnet ef migrations add InitialCreate -o Database\Migrations
 dotnet ef database update
 
 Above needs correct connection string specified
+
+3. To properly run migrations you need to specify migration project in options:
+	  builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster", null, options =>
+            {
+                options.UseSqlServer(x => x.MigrationsAssembly("Forecaster.Infrastructure"));
+            });
+    Without that the exception is thrown about pending migration (no migration is also pending migration).\
+
+4. EntityFramework.Design packages are development time only packages. They are not needed in runtime and they are not transitive.

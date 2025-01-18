@@ -11,7 +11,7 @@ namespace MigrationService
     public class Worker : BackgroundService
     {
         public static string Name = "MigrationService";
-        private static readonly ActivitySource s_activitySource = new(Name);
+        private static readonly ActivitySource s_activitySource = new ActivitySource(Name);
 
         private readonly ILogger<Worker> _logger;
         private readonly IServiceProvider serviceProvider;

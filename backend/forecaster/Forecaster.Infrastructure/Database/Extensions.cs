@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Forecaster.Infrastructure.Database
 {
@@ -12,8 +7,10 @@ namespace Forecaster.Infrastructure.Database
     {
         public static void AddForecasterDatabase(this IHostApplicationBuilder builder)
         {
-            builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster");
-
+            builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster", null, options =>
+            {
+                options.UseSqlServer(x => x.MigrationsAssembly("Forecaster.Infrastructure"));
+            });
         }
     }
 }
