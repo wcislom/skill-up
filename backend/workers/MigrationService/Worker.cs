@@ -36,7 +36,6 @@ namespace MigrationService
 
                 await EnsureDatabaseAsync(dbContext, cancellationToken);
                 await RunMigrationAsync(dbContext, cancellationToken);
-                await SeedDataAsync(dbContext, cancellationToken);
             }
             catch (Exception ex)
             {
@@ -71,22 +70,6 @@ namespace MigrationService
                 // Run migration in a transaction to avoid partial migration if it fails.
                 await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
                 await dbContext.Database.MigrateAsync(cancellationToken);
-                await transaction.CommitAsync(cancellationToken);
-            });
-        }
-
-        private static async Task SeedDataAsync(WeatherForecastDbContext dbContext, CancellationToken cancellationToken)
-        {
-            WeatherForecast forecast = new(new DateOnly(2025, 1, 1), 4, "Warm, Sunny", null);
-            
-
-            var strategy = dbContext.Database.CreateExecutionStrategy();
-            await strategy.ExecuteAsync(async () =>
-            {
-                // Seed the database
-                await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
-                await dbContext.WeatherForecasts.AddAsync(forecast, cancellationToken);
-                await dbContext.SaveChangesAsync(cancellationToken);
                 await transaction.CommitAsync(cancellationToken);
             });
         }

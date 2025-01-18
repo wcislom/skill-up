@@ -1,6 +1,5 @@
 ﻿using Forecaster.Core;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace Forecaster.Infrastructure.Database
 {
@@ -15,6 +14,27 @@ namespace Forecaster.Infrastructure.Database
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(WeatherForecastDbContext).Assembly);
+
+            //modelBuilder.Entity<WeatherForecast>().HasData(
+            //    new WeatherForecast(
+            //        1,
+            //       new DateOnly(2025, 5, 1),
+            //       25,
+            //       "Hot"
+            //    ),
+            //     new WeatherForecast(
+            //       2,
+            //       new DateOnly(2025, 5, 2),
+            //       20,
+            //       "Warm"
+            //    ),
+            //    new WeatherForecast(
+            //        3,
+            //       new DateOnly(2025, 5, 3),
+            //       15,
+            //       "Chill"
+            //    )
+            //);
         }
 
          public DbSet<WeatherForecast> WeatherForecasts { get; set; }
