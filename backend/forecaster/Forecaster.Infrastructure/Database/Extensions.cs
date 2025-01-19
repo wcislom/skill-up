@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Forecaster.Core.Repositories;
+using Forecaster.Infrastructure.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace Forecaster.Infrastructure.Database
@@ -11,6 +14,8 @@ namespace Forecaster.Infrastructure.Database
             {
                 options.UseSqlServer(x => x.MigrationsAssembly("Forecaster.Infrastructure"));
             });
+
+            builder.Services.AddTransient<IWeatherForecastRepository, WeatherForecastRepository>();
         }
     }
 }
