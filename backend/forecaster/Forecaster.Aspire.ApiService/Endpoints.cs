@@ -6,9 +6,9 @@ namespace Forecaster.ApiService
     {
         public static void MapForecasterEndpoints(this WebApplication app)
         {
-            app.MapGet("/weatherforecast", (IWeatherForecastRepository repository) =>
+            app.MapGet("/weatherforecast", async (IWeatherForecastRepository repository) =>
             {
-               var forecasts = repository.GetAllForecasts();
+               var forecasts = await repository.GetAllForecasts();
                 return forecasts;
             })
             .WithName("GetWeatherForecast");

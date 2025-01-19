@@ -1,6 +1,7 @@
 ﻿using Forecaster.Core;
 using Forecaster.Core.Repositories;
 using Forecaster.Infrastructure.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace Forecaster.Infrastructure.Repositories
 {
@@ -11,9 +12,9 @@ namespace Forecaster.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        public IEnumerable<WeatherForecast> GetAllForecasts()
+        public async Task<IEnumerable<WeatherForecast>> GetAllForecasts()
         {
-            return _dbContext.WeatherForecasts.ToList();
+            return await _dbContext.WeatherForecasts.ToListAsync();
         }
     }
 }
