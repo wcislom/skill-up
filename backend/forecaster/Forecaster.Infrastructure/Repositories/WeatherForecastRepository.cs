@@ -12,9 +12,9 @@ namespace Forecaster.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task<IEnumerable<WeatherForecast>> GetAllForecasts()
+        public async Task<IEnumerable<WeatherForecast>> GetAllForecasts(CancellationToken cancellationToken)
         {
-            return await _dbContext.WeatherForecasts.ToListAsync();
+            return await _dbContext.WeatherForecasts.ToListAsync(cancellationToken);
         }
     }
 }

@@ -2,6 +2,6 @@
 {
     public interface IWeatherForecastRepository
     {
-        Task<IEnumerable<WeatherForecast>> GetAllForecasts();
+        Task<IEnumerable<WeatherForecast>> GetAllForecasts(CancellationToken cancellation);
     }
 }
