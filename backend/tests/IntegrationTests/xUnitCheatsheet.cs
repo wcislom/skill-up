@@ -4,7 +4,7 @@
     {
         public class FactAndTheoryTests : IDisposable, IClassFixture<SampleFixture>
         {
-            private SampleFixture _fixture = null;
+            private SampleFixture _fixture;
 
             public FactAndTheoryTests(SampleFixture fixture)
             {

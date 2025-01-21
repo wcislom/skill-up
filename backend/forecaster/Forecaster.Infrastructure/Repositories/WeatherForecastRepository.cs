@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Forecaster.Infrastructure.Repositories
 {
-    internal class WeatherForecastRepository : IWeatherForecastRepository
+    public class WeatherForecastRepository : IWeatherForecastRepository
     {
         private readonly WeatherForecastDbContext _dbContext;
         public WeatherForecastRepository(WeatherForecastDbContext dbContext)

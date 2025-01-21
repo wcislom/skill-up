@@ -25,11 +25,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Fixtures\" />
+    <None Include="xUnitCheatsheet.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="xUnitCheatsheet.cs" />
+    <ProjectReference Include="..\..\forecaster\Forecaster.Infrastructure\Forecaster.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
