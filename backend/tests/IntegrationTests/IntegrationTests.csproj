@@ -24,4 +24,12 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Fixtures\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="xUnitCheatsheet.cs" />
+  </ItemGroup>
+
 </Project>
