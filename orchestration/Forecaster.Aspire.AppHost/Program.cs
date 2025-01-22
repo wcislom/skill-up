@@ -2,7 +2,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache");
 
-var sql = builder.AddSqlServer("sql")
+var sql = builder.AddSqlServer("sql", port: 1433)
     .WithLifetime(ContainerLifetime.Persistent)
     .WithDataVolume();
 
