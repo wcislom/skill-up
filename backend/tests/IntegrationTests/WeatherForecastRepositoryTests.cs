@@ -1,4 +1,5 @@
-﻿using Forecaster.Core.Repositories;
+﻿using Forecaster.Core;
+using Forecaster.Core.Repositories;
 using Forecaster.Infrastructure.Repositories;
 using IntegrationTests.Fixtures;
 
@@ -13,6 +14,22 @@ namespace IntegrationTests
         {
             _fixture = fixture;
             _repository = new WeatherForecastRepository(_fixture.DbContext);
+            using(var transaction = _fixture.DbContext.Database.BeginTransaction())
+            {
+                _fixture.DbContext.WeatherForecasts.Add(new WeatherForecast(0, new DateOnly(2025,1,10), 20, "Warm"));
+                _fixture.DbContext.SaveChanges();
+                transaction.Commit();
+            }
+        }
+
+        [Fact]
+        public async Task GetAllForecasts_ReturnsAllForecasts()
+        {
+            // act
+            var forecasts = await _repository.GetAllForecasts(CancellationToken.None);
+
+            // assert
+            Assert.NotEmpty(forecasts);
         }
     }
 }

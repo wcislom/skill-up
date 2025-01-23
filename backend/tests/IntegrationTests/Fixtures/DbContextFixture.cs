@@ -1,14 +1,13 @@
 ﻿using Forecaster.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using System.Reflection;
+using System.Data.Common;
 
 namespace IntegrationTests.Fixtures
 {
     public class DbContextFixture : IDisposable
     {
         private readonly WeatherForecastDbContext _dbContext;
-        private const string ConnectionString = "put-connection-string-here";
 
         public DbContextFixture() 
         {
@@ -17,19 +16,29 @@ namespace IntegrationTests.Fixtures
             .AddUserSecrets(typeof(DbContextFixture).Assembly)
             .Build();
 
-            // TODO: get password from secret manager
+            DbConnectionStringBuilder builder = new DbConnectionStringBuilder
+            {
+                { "Server", "127.0.0.1" },
+                { "Database", Guid.NewGuid().ToString() },
+                { "User Id", config.GetValue<string>("Secrets:testUserLogin")  },
+                { "Password", config.GetValue<string>("Secrets:testUserPassword") },
+                { "TrustServerCertificate", "True" }
+            };
+
+            var connectionString = builder.ConnectionString;
 
             _dbContext = new WeatherForecastDbContext(new DbContextOptionsBuilder<WeatherForecastDbContext>()
-                .UseSqlServer(ConnectionString, options =>
-                {
-                })
+                .UseSqlServer(connectionString)
                 .Options);
+
+            _dbContext.Database.EnsureCreated();
         }
 
         public WeatherForecastDbContext DbContext => _dbContext;
 
         public void Dispose()
         {
+            _dbContext.Database.EnsureDeleted();
             _dbContext.Dispose();
         }
     }
