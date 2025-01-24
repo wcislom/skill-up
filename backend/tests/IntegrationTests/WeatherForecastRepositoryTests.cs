@@ -45,6 +45,8 @@ namespace IntegrationTests
 
             var state = dbContext.ChangeTracker.Entries().First().State;
 
+            dbContext.Attach(weatherForecast);
+
         }
     }
 }
