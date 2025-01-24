@@ -31,5 +31,20 @@ namespace IntegrationTests
             // assert
             Assert.NotEmpty(forecasts);
         }
+
+        [Fact]
+        public async Task DbContext_ChangeDetectorPlayground()
+        {
+            var dbContext = _fixture.DbContext;
+           
+            var weatherForecast = dbContext.WeatherForecasts.First();
+
+            weatherForecast.Summary = "Changed summary";
+
+            dbContext.ChangeTracker.DetectChanges();
+
+            var state = dbContext.ChangeTracker.Entries().First().State;
+
+        }
     }
 }
