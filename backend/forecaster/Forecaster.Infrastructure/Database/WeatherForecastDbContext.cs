@@ -1,4 +1,4 @@
-﻿using Forecaster.Core;
+﻿using Forecaster.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Forecaster.Infrastructure.Database

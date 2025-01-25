@@ -1,4 +1,4 @@
-﻿using Forecaster.Core;
+﻿using Forecaster.Core.Entities;
 using Forecaster.Core.Repositories;
 using Forecaster.Infrastructure.Database;
 using Microsoft.EntityFrameworkCore;

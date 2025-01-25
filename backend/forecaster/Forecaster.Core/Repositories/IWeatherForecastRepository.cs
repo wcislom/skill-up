@@ -1,4 +1,6 @@
-﻿namespace Forecaster.Core.Repositories
+﻿using Forecaster.Core.Entities;
+
+namespace Forecaster.Core.Repositories
 {
     public interface IWeatherForecastRepository
     {
