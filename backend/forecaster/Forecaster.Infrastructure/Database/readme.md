@@ -11,6 +11,8 @@ Above needs correct connection string specified
             {
                 options.UseSqlServer(x => x.MigrationsAssembly("Forecaster.Infrastructure"));
             });
-    Without that the exception is thrown about pending migration (no migration is also pending migration).\
+    Without that the exception is thrown about pending migration (no migration is also pending migration).
 
 4. EntityFramework.Design packages are development time only packages. They are not needed in runtime and they are not transitive.
+
+6. Remove migration from db    dotnet ef migrations remove --project ../Forecaster.Infrastructure

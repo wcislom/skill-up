@@ -1,4 +1,5 @@
 ﻿using Forecaster.Core;
+using Forecaster.Core.Entities;
 using Forecaster.Core.Repositories;
 using Forecaster.Infrastructure.Repositories;
 using IntegrationTests.Fixtures;
