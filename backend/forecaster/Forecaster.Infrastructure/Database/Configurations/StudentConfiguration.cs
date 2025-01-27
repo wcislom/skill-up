@@ -8,6 +8,7 @@ namespace Forecaster.Infrastructure.Database.Configurations
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
+            builder.ToTable("Student", Schemas.Training);
             builder.Property(e => e.Id).HasColumnName("StudentId");
             builder.HasKey(e => e.Id);
 

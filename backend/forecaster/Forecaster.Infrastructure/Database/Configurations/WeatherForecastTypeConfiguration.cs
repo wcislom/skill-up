@@ -8,6 +8,7 @@ namespace Forecaster.Infrastructure.Database.Configurations
     {
         public void Configure(EntityTypeBuilder<WeatherForecast> builder)
         {
+            builder.ToTable("WeatherForecast", Schemas.Weather);
             builder.HasKey(e => e.Id);
             builder.Property(e => e.Id).HasColumnName("WeatherForecastId");
             builder.Property(e => e.Date).IsRequired();
