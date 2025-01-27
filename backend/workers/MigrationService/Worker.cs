@@ -32,7 +32,7 @@ namespace MigrationService
             try
             {
                 using var scope = serviceProvider.CreateScope();
-                var dbContext = scope.ServiceProvider.GetRequiredService<WeatherForecastDbContext>();
+                var dbContext = scope.ServiceProvider.GetRequiredService<ForecasterDbContext>();
 
                 await EnsureDatabaseAsync(dbContext, cancellationToken);
                 await RunMigrationAsync(dbContext, cancellationToken);
@@ -46,7 +46,7 @@ namespace MigrationService
             hostApplicationLifetime.StopApplication();
         }
 
-        private static async Task EnsureDatabaseAsync(WeatherForecastDbContext dbContext, CancellationToken cancellationToken)
+        private static async Task EnsureDatabaseAsync(ForecasterDbContext dbContext, CancellationToken cancellationToken)
         {
             var dbCreator = dbContext.GetService<IRelationalDatabaseCreator>();
 
@@ -62,7 +62,7 @@ namespace MigrationService
             });
         }
 
-        private static async Task RunMigrationAsync(WeatherForecastDbContext dbContext, CancellationToken cancellationToken)
+        private static async Task RunMigrationAsync(ForecasterDbContext dbContext, CancellationToken cancellationToken)
         {
             var strategy = dbContext.Database.CreateExecutionStrategy();
             await strategy.ExecuteAsync(async () =>

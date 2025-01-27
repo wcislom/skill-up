@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Forecaster.Infrastructure.Database
 {
-    public class WeatherForecastDbContext : DbContext
+    public class ForecasterDbContext : DbContext
     {
-        public WeatherForecastDbContext(DbContextOptions<WeatherForecastDbContext> options)
+        public ForecasterDbContext(DbContextOptions<ForecasterDbContext> options)
             : base(options)
         {
         }
@@ -13,7 +13,7 @@ namespace Forecaster.Infrastructure.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(WeatherForecastDbContext).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ForecasterDbContext).Assembly);
 
             //modelBuilder.Entity<WeatherForecast>().HasData(
             //    new WeatherForecast(

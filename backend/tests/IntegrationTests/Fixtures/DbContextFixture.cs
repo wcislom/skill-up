@@ -7,7 +7,7 @@ namespace IntegrationTests.Fixtures
 {
     public class DbContextFixture : IDisposable
     {
-        private readonly WeatherForecastDbContext _dbContext;
+        private readonly ForecasterDbContext _dbContext;
 
         public DbContextFixture() 
         {
@@ -27,14 +27,14 @@ namespace IntegrationTests.Fixtures
 
             var connectionString = builder.ConnectionString;
 
-            _dbContext = new WeatherForecastDbContext(new DbContextOptionsBuilder<WeatherForecastDbContext>()
+            _dbContext = new ForecasterDbContext(new DbContextOptionsBuilder<ForecasterDbContext>()
                 .UseSqlServer(connectionString)
                 .Options);
 
             _dbContext.Database.EnsureCreated();
         }
 
-        public WeatherForecastDbContext DbContext => _dbContext;
+        public ForecasterDbContext DbContext => _dbContext;
 
         public void Dispose()
         {

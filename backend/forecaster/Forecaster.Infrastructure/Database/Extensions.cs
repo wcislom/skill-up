@@ -10,7 +10,7 @@ namespace Forecaster.Infrastructure.Database
     {
         public static void AddForecasterDatabase(this IHostApplicationBuilder builder)
         {
-            builder.AddSqlServerDbContext<WeatherForecastDbContext>(connectionName: "forecaster", null, options =>
+            builder.AddSqlServerDbContext<ForecasterDbContext>(connectionName: "forecaster", null, options =>
             {
                 options.UseSqlServer(x => x.MigrationsAssembly("Forecaster.Infrastructure"));
             });

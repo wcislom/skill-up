@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Forecaster.Infrastructure.Database.Migrations
 {
-    [DbContext(typeof(WeatherForecastDbContext))]
+    [DbContext(typeof(ForecasterDbContext))]
     [Migration("20250118170444_RenamesIdColumn")]
     partial class RenamesIdColumn
     {

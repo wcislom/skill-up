@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Forecaster.Infrastructure.Database.Migrations
 {
-    [DbContext(typeof(WeatherForecastDbContext))]
+    [DbContext(typeof(ForecasterDbContext))]
     [Migration("20250114204323_InitialCreate")]
     partial class InitialCreate
     {

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Forecaster.Infrastructure.Database.Migrations
 {
-    [DbContext(typeof(WeatherForecastDbContext))]
-    partial class WeatherForecastDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(ForecasterDbContext))]
+    partial class ForecasterDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
