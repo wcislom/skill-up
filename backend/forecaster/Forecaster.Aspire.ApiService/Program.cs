@@ -1,4 +1,5 @@
 using Forecaster.ApiService;
+using Forecaster.ApiService.Options;
 using Forecaster.Core;
 using Forecaster.Infrastructure.Database;
 
@@ -14,6 +15,19 @@ builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
 
 builder.AddForecasterDatabase();
+
+//var section = builder.Configuration.GetSection(SomeOptions.SectionName);
+//builder.Services.AddOptions<SomeOptions>()
+//    .Bind(section)
+//    .ValidateDataAnnotations()
+//    .ValidateOnStart();
+
+// equivalent
+
+builder.Services.AddOptions<SomeOptions>()
+    .BindConfiguration(SomeOptions.SectionName)
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
 
 var app = builder.Build();
 
