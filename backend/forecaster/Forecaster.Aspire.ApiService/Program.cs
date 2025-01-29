@@ -39,7 +39,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-app.MapForecasterEndpoints();
+app.MapForecasterEndpoints()
+    .MapGeneralEndpoints();
 
 
 app.MapDefaultEndpoints();
