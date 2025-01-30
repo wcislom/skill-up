@@ -11,7 +11,6 @@ namespace IntegrationTests.Fixtures
 
         public DbContextFixture() 
         {
-
             var config = new ConfigurationBuilder()
             .AddUserSecrets(typeof(DbContextFixture).Assembly)
             .Build();
@@ -20,8 +19,8 @@ namespace IntegrationTests.Fixtures
             {
                 { "Server", "127.0.0.1" },
                 { "Database", Guid.NewGuid().ToString() },
-                { "User Id", config.GetValue<string>("Secrets:testUserLogin")  },
-                { "Password", config.GetValue<string>("Secrets:testUserPassword") },
+                { "User Id", config?.GetValue<string>("Secrets:testUserLogin")  },
+                { "Password", config?.GetValue<string>("Secrets:testUserPassword") },
                 { "TrustServerCertificate", "True" }
             };
 

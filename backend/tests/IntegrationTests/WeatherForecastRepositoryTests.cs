@@ -34,7 +34,7 @@ namespace IntegrationTests
         }
 
         [Fact]
-        public async Task DbContext_ChangeDetectorPlayground()
+        public void DbContext_ChangeDetectorPlayground()
         {
             var dbContext = _fixture.DbContext;
            

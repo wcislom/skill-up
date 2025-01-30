@@ -1,12 +1,12 @@
 using Forecaster.ApiService;
 using Forecaster.ApiService.Options;
-using Forecaster.Core;
 using Forecaster.Infrastructure.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+builder.Configuration.AddDbConfigurationSample();
 
 // Add services to the container.
 builder.Services.AddProblemDetails();
