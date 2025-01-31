@@ -1,5 +1,6 @@
 ﻿using Forecaster.ApiService.Options;
 using Forecaster.Core.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
 namespace Forecaster.ApiService
@@ -23,8 +24,10 @@ namespace Forecaster.ApiService
         {
             app.MapGet("/options", (IOptions<SomeOptions> options,
                 IOptionsSnapshot<SomeOptions> snaphshot,
-                IOptionsMonitor<SomeOptions> monitor) =>
+                IOptionsMonitor<SomeOptions> monitor,
+                [FromServices] ILogger logger) =>
             {
+                logger.LogWarning("This is some warning from {endpoint}", "options");
                 return Results.Ok(new
                 {
                     Options = options.Value,
