@@ -6,7 +6,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
-builder.Services.AddLogging();
 builder.Configuration.AddDbConfigurationSample();
 
 // Add services to the container.
@@ -27,11 +26,14 @@ builder.AddForecasterDatabase();
 
 builder.Services.AddOptions<SomeOptions>()
     .BindConfiguration(SomeOptions.SectionName)
+    .Configure(options =>
+    {
+        options.RetryCount = 8;
+    })
     .ValidateDataAnnotations()
     .ValidateOnStart();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 app.UseExceptionHandler();
 

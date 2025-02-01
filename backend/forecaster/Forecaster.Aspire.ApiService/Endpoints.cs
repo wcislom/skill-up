@@ -25,9 +25,12 @@ namespace Forecaster.ApiService
             app.MapGet("/options", (IOptions<SomeOptions> options,
                 IOptionsSnapshot<SomeOptions> snaphshot,
                 IOptionsMonitor<SomeOptions> monitor,
-                [FromServices] ILogger logger) =>
+                [FromServices] ILoggerFactory loggerFactory) =>
             {
+                var logger = loggerFactory.CreateLogger("OptionsEndpoint");
                 logger.LogWarning("This is some warning from {endpoint}", "options");
+                using var scope =  logger.BeginScope<SomeOptions>(new SomeOptions());
+                logger.LogInformation("I am in the scope");
                 return Results.Ok(new
                 {
                     Options = options.Value,
