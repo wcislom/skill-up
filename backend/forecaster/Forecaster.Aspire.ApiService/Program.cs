@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add service defaults & Aspire client integrations.
 builder.AddServiceDefaults();
+builder.Services.AddOpenTelemetry().WithMetrics(b => b.AddMeter("Forecaster.Meter"));
 builder.Configuration.AddDbConfigurationSample();
 
 // Add services to the container.
@@ -44,7 +45,6 @@ if (app.Environment.IsDevelopment())
 
 app.MapForecasterEndpoints()
     .MapGeneralEndpoints();
-
 
 app.MapDefaultEndpoints();
 
