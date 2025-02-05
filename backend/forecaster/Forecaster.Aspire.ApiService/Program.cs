@@ -1,6 +1,7 @@
 using Forecaster.ApiService;
 using Forecaster.ApiService.Options;
 using Forecaster.Infrastructure.Database;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,6 +34,10 @@ builder.Services.AddOptions<SomeOptions>()
     })
     .ValidateDataAnnotations()
     .ValidateOnStart();
+
+builder.Services.AddSingleton<IConfigureOptions<SomeOptions>, SomeOptions>()
+    .AddSingleton<IValidateOptions<SomeOptions>, SomeOptions>()
+    .AddScoped((sp) => sp.GetRequiredService<IOptionsSnapshot<SomeOptions>>().Value);
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

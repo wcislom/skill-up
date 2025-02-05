@@ -28,8 +28,8 @@ namespace Forecaster.ApiService
             app.MapGet("/options", (IOptions<SomeOptions> options,
                 IOptionsSnapshot<SomeOptions> snaphshot,
                 IOptionsMonitor<SomeOptions> monitor,
-                [FromServices] ILoggerFactory loggerFactory
-               // ,[FromServices]  SomeOptions optionsFromDC
+                [FromServices] ILoggerFactory loggerFactory,
+                [FromServices]  SomeOptions optionsFromDC
                ) =>
             {
                 CallsCounter.Add(1);
@@ -42,7 +42,7 @@ namespace Forecaster.ApiService
                     Options = options.Value,
                     Snapshot = snaphshot.Value,
                     Monitor = monitor.CurrentValue,
-                    //Object = optionsFromDC
+                    OtionsFromDC = optionsFromDC
                 });
             });
 
