@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.Metrics;
 
 namespace Forecaster.Infrastructure.Metrics
 {
     internal class CallsMeter
     {
+        private readonly Meter _meter;
+        private readonly Counter<long> _counter;
         public CallsMeter(IMeterFactory factory)
         {
-            
+            _meter = factory.Create(nameof(CallsMeter));
+            _counter = _meter.CreateCounter<long>("calls");
+        }
+
+        public void Record()
+        {
+            _counter.Add(1);
         }
     }
 }

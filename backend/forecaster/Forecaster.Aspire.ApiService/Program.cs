@@ -25,7 +25,7 @@ builder.AddForecasterDatabase();
 //    .ValidateOnStart();
 
 // equivalent
-
+builder.Services.AddCallsMeter();
 builder.Services.AddOptions<SomeOptions>()
     .BindConfiguration(SomeOptions.SectionName)
     .Configure(options =>
