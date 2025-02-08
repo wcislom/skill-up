@@ -2,7 +2,7 @@
 
 namespace Forecaster.Infrastructure.Metrics
 {
-    internal class CallsMeter
+    public class CallsMeter
     {
         private readonly Meter _meter;
         private readonly Counter<long> _counter;

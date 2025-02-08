@@ -1,8 +1,10 @@
 ﻿using Forecaster.ApiService.Options;
 using Forecaster.Core.Repositories;
+using Forecaster.Infrastructure.Metrics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Diagnostics.Metrics;
+using System.Runtime.CompilerServices;
 
 namespace Forecaster.ApiService
 {
@@ -29,10 +31,12 @@ namespace Forecaster.ApiService
                 IOptionsSnapshot<SomeOptions> snaphshot,
                 IOptionsMonitor<SomeOptions> monitor,
                 [FromServices] ILoggerFactory loggerFactory,
-                [FromServices]  SomeOptions optionsFromDC
+                [FromServices]  SomeOptions optionsFromDC,
+                [FromServices] CallsMeter callsMeter
                ) =>
             {
                 CallsCounter.Add(1);
+                callsMeter.Record();
                 var logger = loggerFactory.CreateLogger("OptionsEndpoint");
                 logger.LogWarning("This is some warning from {endpoint}", "options");
                 using var scope =  logger.BeginScope<SomeOptions>(new SomeOptions());
