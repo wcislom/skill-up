@@ -50,6 +50,15 @@ namespace Forecaster.ApiService
                 });
             });
 
+            app.MapGet("parallel-test", () =>
+            {
+                var list = Enumerable.Range(0, 1000);
+                Parallel.ForEach(list, (i) =>
+                {
+                    CallsCounter.Add(1);
+                });
+            });
+
             return app;
         }
     }
