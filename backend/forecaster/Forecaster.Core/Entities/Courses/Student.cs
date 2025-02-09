@@ -1,4 +1,4 @@
-﻿namespace Forecaster.Core.Entities
+﻿namespace Forecaster.Core.Entities.Courses
 {
     public class Student
     {

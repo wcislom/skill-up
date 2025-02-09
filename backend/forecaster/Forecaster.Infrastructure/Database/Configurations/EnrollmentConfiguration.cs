@@ -1,4 +1,4 @@
-﻿using Forecaster.Core.Entities;
+﻿using Forecaster.Core.Entities.Courses;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
