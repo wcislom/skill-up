@@ -6,9 +6,13 @@
         public  string? Title { get; set; }
         public string? Platform { get; set; }
 
-        public string? Developer { get; set; }
+        public int? DeveloperId { get; set; }
 
-        public string? Publisher { get; set; }
+        public Developer? Developer { get; set; }
+
+        public int? PublisherId { get; set; }
+
+        public Publisher? Publisher { get; set; }
 
         // One to one relationship
         public VideoGameDetails? VideoGameDetails { get; set; }
