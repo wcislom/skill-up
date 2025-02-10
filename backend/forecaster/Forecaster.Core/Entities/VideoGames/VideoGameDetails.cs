@@ -1,6 +1,6 @@
 ﻿namespace Forecaster.Core.Entities.VideoGames
 {
-    internal class VideoGameDetails
+    public class VideoGameDetails
     {
         public int Id { get; set; }
 

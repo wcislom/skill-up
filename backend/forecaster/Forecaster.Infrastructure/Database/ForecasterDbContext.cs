@@ -1,4 +1,5 @@
 ﻿using Forecaster.Core.Entities;
+using Forecaster.Core.Entities.VideoGames;
 using Microsoft.EntityFrameworkCore;
 
 namespace Forecaster.Infrastructure.Database
@@ -38,5 +39,9 @@ namespace Forecaster.Infrastructure.Database
         }
 
          public DbSet<WeatherForecast> WeatherForecasts { get; set; }
+
+        public DbSet<VideoGame> VideoGame { get; set; }
+
+        public DbSet<VideoGameDetails> VideoGameDetails { get; set; }
     }
 }
