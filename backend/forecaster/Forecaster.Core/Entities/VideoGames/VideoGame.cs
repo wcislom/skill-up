@@ -16,5 +16,7 @@
 
         // One to one relationship
         public VideoGameDetails? VideoGameDetails { get; set; }
+
+        public ICollection<Genre>? Genres { get; set; } = new List<Genre>();
     }
 }
