@@ -2,10 +2,10 @@
 
 namespace DesignPatternLibrary.Tests
 {
-    public class UnitTest1
+    public class DecoratorTests
     {
         [Fact]
-        public async void Decorator_Example()
+        public async Task Decorator_Example()
         {
             // Arrange
             var decorated = new Component();
@@ -16,7 +16,7 @@ namespace DesignPatternLibrary.Tests
             var result = await decoratorB.Operation();
 
             // Assert
-            Assert.Equal("<DecoratorB><DecoratorA><Component>This comes from component</Component></DecoratorA></DecoratorB>", result);
+            Assert.Equal("<DecoratorB><DecoratorA>This comes from component</DecoratorA></DecoratorB>", result);
         }
     }
 }

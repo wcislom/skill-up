@@ -11,7 +11,7 @@
         public async Task<string> Operation()
         {
             var decoratedOutput = await _decorated.Operation();
-            return $"<DecoratorB>${decoratedOutput}</DecoractorB>";
+            return $"<DecoratorB>{decoratedOutput}</DecoratorB>";
         }
     }
 }
