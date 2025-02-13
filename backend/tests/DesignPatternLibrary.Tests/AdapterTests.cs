@@ -3,7 +3,7 @@
 namespace DesignPatternLibrary.Tests
 {
 
-    public class FacadeTests
+    public class AdapterTests
     {
         [Fact]
         public async Task Adapter_Test()
