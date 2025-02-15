@@ -1,11 +1,12 @@
-﻿namespace DesignPatternsLibrary.Composite
+﻿
+namespace DesignPatternsLibrary.Composite
 {
-    public class File : INode
+    public class File : Node
     {
         public File(string name)
+            : base(name)
         {
-            Name = name; 
+         
         }
-        public string Name { get; private set; }
     }
 }
