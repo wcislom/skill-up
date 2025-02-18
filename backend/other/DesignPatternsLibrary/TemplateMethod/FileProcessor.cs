@@ -11,7 +11,7 @@
         public async Task Process(string path)
         {
             var file = await OpenFile(path);
-            if(file == null)
+            if (file == null)
             {
                 throw new FileNotFoundException("File not found");
             }
