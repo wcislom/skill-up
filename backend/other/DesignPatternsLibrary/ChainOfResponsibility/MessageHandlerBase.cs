@@ -1,4 +1,6 @@
-﻿namespace DesignPatternsLibrary.ChainOfResponsibility
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace DesignPatternsLibrary.ChainOfResponsibility
 {
     public abstract class MessageHandlerBase : IMessageHandler
     {
@@ -7,13 +9,13 @@
             _nextHandler = nextHandler;
         }
 
-        public Task<OperationResult> HandleMessageAsync(IMessage message)
+        public Task<OperationResult> HandleMessageAsync<T>(T message)
         {
-            if(CanHandle(message))
+            if (CanHandle(message))
             {
                 return HandleMessageInternalAsync(message);
             }
-            else if(_nextHandler != null)
+            else if (HasNext())
             {
                 return _nextHandler.HandleMessageAsync(message);
             }
@@ -21,11 +23,17 @@
            throw new InvalidOperationException("No handler found for the message");
         }
 
-        protected abstract Task<OperationResult> HandleMessageInternalAsync(IMessage message);
+        protected abstract Task<OperationResult> HandleMessageInternalAsync<T>(T message);
 
-        protected abstract bool CanHandle(IMessage message);
+        protected abstract bool CanHandle<T>(T message);
 
         private readonly IMessageHandler? _nextHandler;
+
+        [MemberNotNullWhen(true, nameof(_nextHandler))]
+        private bool HasNext()
+        {
+            return _nextHandler != null;
+        }
 
     }
 }

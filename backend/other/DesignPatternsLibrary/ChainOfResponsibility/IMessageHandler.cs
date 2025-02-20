@@ -2,6 +2,6 @@
 {
     public interface IMessageHandler
     {
-        Task<OperationResult> HandleMessageAsync(IMessage message);
+        Task<OperationResult> HandleMessageAsync<T>(T message);
     }
 }
