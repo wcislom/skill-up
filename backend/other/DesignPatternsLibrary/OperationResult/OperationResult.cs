@@ -1,24 +1,36 @@
-﻿namespace DesignPatternsLibrary.OperationResult
+﻿using System.Collections.Immutable;
+using System.Runtime.CompilerServices;
+
+namespace DesignPatternsLibrary.OperationResult
 {
-    public record OperationResult<T>
+    public abstract record class OperationResult<T>
     {
         public bool IsSuccess { get; private set; }
 
-        public T? Value { get; private set; }
+       
 
         private OperationResult()
         {
         }
 
-        public OperationResult<T> Success(T value)
+        public static OperationResult<T> Success(T value)
         {
-            return new OperationResult<T> { Value = value, IsSuccess = true };
+            return new SuccessfullOperationResult<T> { Value = value, IsSuccess = true };
         }
 
-        public OperationResult<T> Fail()
+        public static OperationResult<T> Fail(params string[] messages)
         {
-            return new OperationResult<T> { Value = default, IsSuccess = false };
+            return new FailureOperationResult<T> { IsSuccess = false, Messages = messages.ToImmutableList() };
         }
 
+        private record SuccessfullOperationResult<T> : OperationResult<T>
+        {
+            public T? Value { get; init; }
+        }
+
+        private record FailureOperationResult<T> : OperationResult<T>
+        {
+            public ImmutableList<string> Messages { get; init; }
+        }
     }
 }
