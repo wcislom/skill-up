@@ -30,6 +30,7 @@ builder.Services.AddOptions<SomeOptions>()
     .BindConfiguration(SomeOptions.SectionName)
     .Configure(options =>
     {
+        // Overwrites values from configuration
         options.RetryCount = 8;
     })
     .ValidateDataAnnotations()

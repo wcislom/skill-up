@@ -4,14 +4,13 @@ using Forecaster.Infrastructure.Metrics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Diagnostics.Metrics;
-using System.Runtime.CompilerServices;
 
 namespace Forecaster.ApiService
 {
     public static class Endpoints
     {
-        public static Meter meter = new Meter("Forecaster.Meter");
-        public static Counter<int> CallsCounter = meter.CreateCounter<int>("Forecaster.Meter.RequestsCount");
+        public static readonly Meter meter = new Meter("Forecaster.Meter");
+        public static readonly Counter<int> CallsCounter = meter.CreateCounter<int>("Forecaster.Meter.RequestsCount");
         public static WebApplication MapForecasterEndpoints(this WebApplication app)
         {
             app.MapGet("/weatherforecast", async (IWeatherForecastRepository repository, CancellationToken cancelationToken) =>
@@ -31,14 +30,14 @@ namespace Forecaster.ApiService
                 IOptionsSnapshot<SomeOptions> snaphshot,
                 IOptionsMonitor<SomeOptions> monitor,
                 [FromServices] ILoggerFactory loggerFactory,
-                [FromServices]  SomeOptions optionsFromDC,
+                [FromServices] SomeOptions optionsFromDC,
                 [FromServices] CallsMeter callsMeter
                ) =>
             {
                 CallsCounter.Add(1);
                 callsMeter.Record();
                 var logger = loggerFactory.CreateLogger("OptionsEndpoint");
-                logger.LogWarning("This is some warning from {endpoint}", "options");
+                logger.LogWarning("This is some warning from {Endpoint}", "options");
                 using var scope =  logger.BeginScope<SomeOptions>(new SomeOptions());
                 logger.LogInformation("I am in the scope");
                 return Results.Ok(new
