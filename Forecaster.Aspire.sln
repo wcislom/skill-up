@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternsLibrary", "ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatternLibrary.Tests", "backend\tests\DesignPatternLibrary.Tests\DesignPatternLibrary.Tests.csproj", "{26A664DC-50C8-4EDC-80B3-B70FD9F69BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncParallelThreadingTests", "backend\tests\AsyncParallelThreadingTests\AsyncParallelThreadingTests.csproj", "{240EE2A1-9BD6-4572-98C3-861DA0240199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{26A664DC-50C8-4EDC-80B3-B70FD9F69BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26A664DC-50C8-4EDC-80B3-B70FD9F69BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26A664DC-50C8-4EDC-80B3-B70FD9F69BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{240EE2A1-9BD6-4572-98C3-861DA0240199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{240EE2A1-9BD6-4572-98C3-861DA0240199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{240EE2A1-9BD6-4572-98C3-861DA0240199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{240EE2A1-9BD6-4572-98C3-861DA0240199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,5 +114,6 @@ Global
 		{05A6E274-CEA2-4D45-BD31-E6B94C488F27} = {90CDDD43-4651-4BEE-AE6D-812FC142424E}
 		{036BBFA1-CB6B-4A40-B86E-E487195007CB} = {05A6E274-CEA2-4D45-BD31-E6B94C488F27}
 		{26A664DC-50C8-4EDC-80B3-B70FD9F69BB9} = {3DADF74E-DCEF-4611-85D2-3B8D211FE922}
+		{240EE2A1-9BD6-4572-98C3-861DA0240199} = {3DADF74E-DCEF-4611-85D2-3B8D211FE922}
 	EndGlobalSection
 EndGlobal
