@@ -20,6 +20,7 @@ namespace AsyncParallelThreadingTests
                 }
             }, token);
             await Task.Delay(5000);
+            tokenSource.Cancel();
             Debug.WriteLine("Task status is {0}", task.Status);
         }
     }
