@@ -2,14 +2,14 @@
 
 namespace AsyncParallelThreadingTests
 {
-    public class UnitTest1
+    public class CancellationTokenTests
     {
         [Fact]
-        public async void Test1()
+        public async Task Should_set_canceled_state_when_token_is_cancelled()
         {
             Debug.WriteLine("Thread Id: {0}", Thread.CurrentThread.ManagedThreadId);
             Debug.WriteLine("Threads in Thread Pool {0}", ThreadPool.ThreadCount);
-
+            // arrange
             using var tokenSource = new CancellationTokenSource();
             var token = tokenSource.Token;
             var task = Task.Run(() =>
@@ -19,9 +19,16 @@ namespace AsyncParallelThreadingTests
                     token.ThrowIfCancellationRequested();
                 }
             }, token);
-            await Task.Delay(5000);
-            tokenSource.Cancel();
-            Debug.WriteLine("Task status is {0}", task.Status);
+
+            // act
+            await tokenSource.CancelAsync();
+
+            // assert
+            Assert.Equal(TaskStatus.WaitingForActivation, task.Status);
+            Thread.Sleep(3000);
+            Assert.Equal(TaskStatus.Canceled, task.Status);
+
+
         }
     }
 }
