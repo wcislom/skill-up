@@ -38,4 +38,19 @@
         return $"12 products cost more than {amount:C}.";
     }
 
+    private static void OuterMethod()
+    {
+        TaskTitle("Outer method starting...");
+        OutputThreadInfo();
+        Task innerTask = Task.Factory.StartNew(InnerMethod);
+        TaskTitle("Outer method finished.");
+    }
+
+    private static void InnerMethod()
+    {
+        TaskTitle("Inner method starting...");
+        OutputThreadInfo();
+        Thread.Sleep(2000);
+        TaskTitle("Inner method finished.");
+    }
 }
