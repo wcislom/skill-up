@@ -38,9 +38,12 @@ partial class Program
     }
     private static void MethodLockB()
     {
+        bool lockTaken = false;
+
         try
         {
-            if (Monitor.TryEnter(SharedObjects.Conch, TimeSpan.FromSeconds(1)))
+            Monitor.TryEnter(SharedObjects.Conch, TimeSpan.FromSeconds(5), ref lockTaken);
+            if (lockTaken)
             {
                 for (int i = 0; i < 5; i++)
                 {
@@ -56,7 +59,10 @@ partial class Program
         }
         finally
         {
-            Monitor.Exit(SharedObjects.Conch);
+            if(lockTaken)
+            {
+                Monitor.Exit(SharedObjects.Conch);
+            }
         }
     }
 }
