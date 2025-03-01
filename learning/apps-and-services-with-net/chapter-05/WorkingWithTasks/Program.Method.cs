@@ -42,7 +42,7 @@
     {
         TaskTitle("Outer method starting...");
         OutputThreadInfo();
-        Task innerTask = Task.Factory.StartNew(InnerMethod);
+        Task innerTask = Task.Factory.StartNew(InnerMethod, TaskCreationOptions.AttachedToParent);
         TaskTitle("Outer method finished.");
     }
 
