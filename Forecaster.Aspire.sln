@@ -48,6 +48,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "chapter-05", "chapter-05", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithTasks", "learning\apps-and-services-with-net\chapter-05\WorkingWithTasks\WorkingWithTasks.csproj", "{70A269A8-C700-4428-BA93-41CF5A86235C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynchronizingResourceAccess", "learning\apps-and-services-with-net\chapter-05\SynchronizingResourceAccess\SynchronizingResourceAccess.csproj", "{F03F52E1-9684-4ACB-9E02-08E57850E284}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -106,6 +108,10 @@ Global
 		{70A269A8-C700-4428-BA93-41CF5A86235C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70A269A8-C700-4428-BA93-41CF5A86235C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70A269A8-C700-4428-BA93-41CF5A86235C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03F52E1-9684-4ACB-9E02-08E57850E284}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03F52E1-9684-4ACB-9E02-08E57850E284}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03F52E1-9684-4ACB-9E02-08E57850E284}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03F52E1-9684-4ACB-9E02-08E57850E284}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -130,5 +136,6 @@ Global
 		{F81ECEBE-33F8-45FF-860F-6FFDDD723629} = {1C1D7FC4-34F5-4724-8DAC-D944EC381517}
 		{7F8FA29F-816A-4538-84D3-8B07943ADEB4} = {F81ECEBE-33F8-45FF-860F-6FFDDD723629}
 		{70A269A8-C700-4428-BA93-41CF5A86235C} = {7F8FA29F-816A-4538-84D3-8B07943ADEB4}
+		{F03F52E1-9684-4ACB-9E02-08E57850E284} = {7F8FA29F-816A-4538-84D3-8B07943ADEB4}
 	EndGlobalSection
 EndGlobal
