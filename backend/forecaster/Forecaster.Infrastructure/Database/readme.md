@@ -15,4 +15,5 @@ Above needs correct connection string specified
 
 4. EntityFramework.Design packages are development time only packages. They are not needed in runtime and they are not transitive.
 
-6. Remove migration from db    dotnet ef migrations remove --project ../Forecaster.Infrastructure
+6. Remove migration from db
+    dotnet ef migrations remove --project ../Forecaster.Infrastructure
