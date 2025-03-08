@@ -1,0 +1,7 @@
+Aplikacja sk³ada siê z dwóch czêœci:
+	- modu³ zg³oszeñ, 
+	- modu³ ticketów
+
+U¿ytkownik w module zg³oszeñ dodaje zg³oszenie. 
+
+Agent w module ticketów przegl¹da zg³oszenia i przypisuje sobie zg³oszenie. Supervisor nadzoruje pracê agentów i ma mo¿liwoœæ przegl¹dania wszystkich zg³oszeñ.

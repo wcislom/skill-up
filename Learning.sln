@@ -81,6 +81,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "courses", "courses", "{A4778CF6-537D-4207-9A41-67D5EAEC16B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messaging-pragmatycznie", "messaging-pragmatycznie", "{2DE03039-6EBA-4BD6-A56E-073C81D2E49A}"
+	ProjectSection(SolutionItems) = preProject
+		Domena.txt = Domena.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
