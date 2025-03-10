@@ -8,3 +8,5 @@ Agent w module ticketów przegl¹da zg³oszenia i przypisuje sobie zg³oszenie. Supe
 
 
 System umo¿liwa generowanie anomalii.
+
+Tactical commit
