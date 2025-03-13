@@ -80,11 +80,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "learning\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "courses", "courses", "{A4778CF6-537D-4207-9A41-67D5EAEC16B2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "messaging-pragmatycznie", "messaging-pragmatycznie", "{2DE03039-6EBA-4BD6-A56E-073C81D2E49A}"
-	ProjectSection(SolutionItems) = preProject
-		Domena.txt = Domena.txt
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -224,6 +219,5 @@ Global
 		{45651B3B-4B8C-4380-A68E-F094CE0F0CA0} = {06AF9919-B113-4B90-B7DD-81E39A12DE80}
 		{EB810010-3740-4ACE-8051-52E6903D2F09} = {06AF9919-B113-4B90-B7DD-81E39A12DE80}
 		{4F3897B6-6326-4305-9923-D64F57E9BE9D} = {06AF9919-B113-4B90-B7DD-81E39A12DE80}
-		{2DE03039-6EBA-4BD6-A56E-073C81D2E49A} = {A4778CF6-537D-4207-9A41-67D5EAEC16B2}
 	EndGlobalSection
 EndGlobal
