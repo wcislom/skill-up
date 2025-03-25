@@ -1,0 +1,66 @@
+1. Komunikacja synchroniczna to nie to samo co programowanie synchroniczne.
+
+Flow synchroniczne z aplikacji
+
+Actor ---> /inquiries/submit ---> Translations (traslate inquiry) ---> Tickets (create ticket) ---> Actor
+
+2. Fallacies of distributed computing
+
+3. Jakie s¹ problemy z synchronicznym flow?
+- opó¿nienia na poszczególnych callach spowalnia ca³e flow. Czekanie do 3s jest jeszcze akceptowalne
+- bledy na poszczególnych etapach powoduj¹, ¿e dane s¹ niespójne, a ca³u Use Case nie dzia³a, a wiadomoœæ przepada
+- niedostêpnoœæ jednej us³ugi w ³añcuchu powoduje, ¿e Use Case nie dzia³a, a wiadomoœæ przepada
+- miêdzy us³ugami jest ciasna powi¹zanie (coupling), bo trzeba wiedzieæ jakie us³ugi i w jakiej kolejnoœci odpytywaæ.
+- hardcodowane adresy i porty uniemo¿liwiaj¹ skalowanie
+
+4. Komunikacja Asynchroniczna
+- dobr¹ analogi¹ jest poczta
+- nie wymaga dostêpnoœci ani gotowoœci odbiorcy, ¿eby siê powiod³a.
+- istnieje poœrednik, o którym wiedz¹ nadawcy i odbiorcy
+	Zalety:
+	- wystarczy znaæ jeden adres, prostsza konfiguracja
+	Wady:
+	- single point of failure, jak siê wy³o¿y, to game over
+	- mo¿e siê przytykaæ przy du¿ym obci¹¿eniu, wiêc system bêdzie wolny
+
+Scenariusze komunikacji:
+1 - 1 - Direct (bezpoœrednia)
+1 - n - Pub-Sub, odbiorcy oczekuj¹ swojej kopii komunikatu
+
+Do rozwi¹zania wyzwañ komunikacji asynchronicznej powsta³y Message Brokery. Smart Broker, Dumb Consumer
+
+5. Rabbit MQ i AMQP
+- Rabbit jest dojrza³y, oparty na protokole AMQP
+- w protokole AMQP podstawow¹ jednostk¹ danych jest ramka, jest ich 9
+- AMQP to protokó³ programowalny
+
+Bulding blocki Rabbit MQ
+- po³¹czenia s¹ kosztowone
+- w ramach po³¹czenia jest wiele channeli (lekkich po³¹czeñ), np. jednego per handler/kolejka
+- channele s¹ powo³ywane do ¿ycia, a po pracy s¹ zamykane
+- producent wysy³a wiadomoœæ do Exchenga
+- konsumenci pod³¹czaj¹ siê do kolejek
+- binding - definicja regu³ trasowania - exchange na podstawie routingu wie, do jakiej kolejki przekazaæ wiadomoœæ
+- producent i konsument nie wiedz¹ o sobie nic
+
+Programista musi umieæ zaprojektowaæ drogê komunikatów (od producenta do konsumenta), czyli stworzyæ topologiê.
+
+Topologia to sposób po³¹czeñ ró¿nych elementów
+
+Porty
+	- 5672:5672 = komunikacja AMQP
+	- 15672:15672 - ui
+	- 15692:15692 - metryki dla Prometheusa
+
+6. Po³¹czenie
+
+- Virtual Host
+
+Po³¹czenie powinny byæ jedno per aplikacja, bo jest drogie.
+Kana³ dzia³a w ramach jednego po³¹czenia, jest tañszy do utworzenia. 
+ - powinien byæ d³ugo ¿yj¹cy
+ - nie jest Thread Safe
+ - daje API do komunikacji
+
+
+V-Host-  sposób logicznego separowania konfiguracji w ramach jednej instajci Rabbita. Np. ka¿da aplikacja ma swój VHost, albo ka¿de œrodowisko. To co jest w VHost jest niedostêpne w innym VHost, wiêc logicznie siê separujemy od reszty.
