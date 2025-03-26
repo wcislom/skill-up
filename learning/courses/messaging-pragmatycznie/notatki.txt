@@ -7,10 +7,10 @@ Actor ---> /inquiries/submit ---> Translations (traslate inquiry) ---> Tickets (
 2. Fallacies of distributed computing
 
 3. Jakie s¹ problemy z synchronicznym flow?
-- opó¿nienia na poszczególnych callach spowalnia ca³e flow. Czekanie do 3s jest jeszcze akceptowalne
-- bledy na poszczególnych etapach powoduj¹, ¿e dane s¹ niespójne, a ca³u Use Case nie dzia³a, a wiadomoœæ przepada
+- opóŸnienia na poszczególnych callach spowalnia ca³e flow. Czekanie do 3s jest jeszcze akceptowalne
+- b³êdy na poszczególnych etapach powoduj¹, ¿e dane s¹ niespójne, ca³y Use Case nie dzia³a, a wiadomoœæ przepada
 - niedostêpnoœæ jednej us³ugi w ³añcuchu powoduje, ¿e Use Case nie dzia³a, a wiadomoœæ przepada
-- miêdzy us³ugami jest ciasna powi¹zanie (coupling), bo trzeba wiedzieæ jakie us³ugi i w jakiej kolejnoœci odpytywaæ.
+- miêdzy us³ugami jest ciasne powi¹zanie (coupling), bo trzeba wiedzieæ jakie us³ugi i w jakiej kolejnoœci odpytywaæ.
 - hardcodowane adresy i porty uniemo¿liwiaj¹ skalowanie
 
 4. Komunikacja Asynchroniczna
@@ -24,8 +24,8 @@ Actor ---> /inquiries/submit ---> Translations (traslate inquiry) ---> Tickets (
 	- mo¿e siê przytykaæ przy du¿ym obci¹¿eniu, wiêc system bêdzie wolny
 
 Scenariusze komunikacji:
-1 - 1 - Direct (bezpoœrednia)
-1 - n - Pub-Sub, odbiorcy oczekuj¹ swojej kopii komunikatu
+1 - 1 -> Direct (bezpoœrednia)
+1 - n -> Pub-Sub, odbiorcy oczekuj¹ swojej kopii komunikatu
 
 Do rozwi¹zania wyzwañ komunikacji asynchronicznej powsta³y Message Brokery. Smart Broker, Dumb Consumer
 
@@ -35,7 +35,7 @@ Do rozwi¹zania wyzwañ komunikacji asynchronicznej powsta³y Message Brokery. Smar
 - AMQP to protokó³ programowalny
 
 Bulding blocki Rabbit MQ
-- po³¹czenia s¹ kosztowone
+- po³¹czenia s¹ kosztowne, jak siê je stworzy, to trzeba je trzymaæ
 - w ramach po³¹czenia jest wiele channeli (lekkich po³¹czeñ), np. jednego per handler/kolejka
 - channele s¹ powo³ywane do ¿ycia, a po pracy s¹ zamykane
 - producent wysy³a wiadomoœæ do Exchenga
@@ -64,3 +64,11 @@ Kana³ dzia³a w ramach jednego po³¹czenia, jest tañszy do utworzenia.
 
 
 V-Host-  sposób logicznego separowania konfiguracji w ramach jednej instajci Rabbita. Np. ka¿da aplikacja ma swój VHost, albo ka¿de œrodowisko. To co jest w VHost jest niedostêpne w innym VHost, wiêc logicznie siê separujemy od reszty.
+
+Koperta wiadomoœci - wszystko to co jest dodatkowo przesy³ane wraz z payloadem, czyli tym faktycznym miêsem, które nas interesuje. W RabbitMQ jest X w³aœciwoœci, np. MessageId, routing, Type itd. To czego brakuje, mo¿na dodaæ do dynamicznej kolekcji nag³ówków (max 128kB). ALe np. MassTransis wszystko upycha w payloadzie i ten payload staje siê kopert¹.
+
+Semantyka
+a. Komenda - intencja zmiany stanu systemu
+b. Event - informuje o zmianie stanu systemu, inni na to reaguj¹
+c. Request - Response - nadawca wywo³uje komendê, ale dodatkowo otrzymuje odpowiedŸ
+
