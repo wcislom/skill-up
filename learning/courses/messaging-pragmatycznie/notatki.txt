@@ -72,3 +72,8 @@ a. Komenda - intencja zmiany stanu systemu
 b. Event - informuje o zmianie stanu systemu, inni na to reaguj¹
 c. Request - Response - nadawca wywo³uje komendê, ale dodatkowo otrzymuje odpowiedŸ
 
+Jeœli by siê tak zastanowiæ, to komenda lub event implikuj¹ topologiê. Event bêdziemy wysy³aæ do wiêkszej liczby odbiorców, a command raczej do jednego.
+
+ECST (Event carries state) vs Event Notification
+ECST - wszystkie informacje zawarte w Evencie
+EN - tylko niezbêdna informacja, by pobraæ sobie najnowszy stan ze Ÿród³a prawdy
