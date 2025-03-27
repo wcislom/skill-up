@@ -77,3 +77,11 @@ Jeœli by siê tak zastanowiæ, to komenda lub event implikuj¹ topologiê. Event bêd
 ECST (Event carries state) vs Event Notification
 ECST - wszystkie informacje zawarte w Evencie
 EN - tylko niezbêdna informacja, by pobraæ sobie najnowszy stan ze Ÿród³a prawdy
+
+
+MODU£ 7
+
+¯eby wys³aæ wiadomoœæ, trzeba podaæ adres: Exchange + Routing Key. Wiadomoœci zawsze wysy³a siê na Exchange.
+Exchange decyduje, na jak¹ kolejkê przekierowaæ wiadomoœæ na podstawie routing Key i nag³ówków.
+Wyró¿niamy 4 typy Wymian
+1. Fanout - przesy³a do wszystkich kolejek bez patrzenia na routing key. 
