@@ -85,3 +85,4 @@ MODU£ 7
 Exchange decyduje, na jak¹ kolejkê przekierowaæ wiadomoœæ na podstawie routing Key i nag³ówków.
 Wyró¿niamy 4 typy Wymian
 1. Fanout - przesy³a do wszystkich kolejek bez patrzenia na routing key. 
+2 Direct - przesy³a z Exchange do konkretnej kolejki na podstawie dok³adnego dopasowania routing-key
