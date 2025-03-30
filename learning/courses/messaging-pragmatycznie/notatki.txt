@@ -91,3 +91,7 @@ Wyró¿niamy 4 typy Wymian
 	# - dowolna iloœæ s³ó
 np. order.* -> order.creared, order.updated, ale ju¿ nie order.has.updated
 np. #.deleted -> order.deleted, product.deleted, one.two.three.deleted.
+
+4. Headers - bierze pod uwagê nag³ówki, nie patrzy w ogóle na routing-key. Definiujemy sobie dodatkowo nag³ówek x-match:[all|any]
+
+Alternate Exchange - jest to exchange u¿ywany, gdy nie dopasowano ¿adnego adresata w danym exchangu. Jest to taki fallback.
