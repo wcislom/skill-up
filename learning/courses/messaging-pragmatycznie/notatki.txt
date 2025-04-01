@@ -97,3 +97,5 @@ np. #.deleted -> order.deleted, product.deleted, one.two.three.deleted.
 Alternate Exchange - jest to exchange u¿ywany, gdy nie dopasowano ¿adnego adresata w danym exchangu. Jest to taki fallback.
 
 Exchange to Exchnage - mo¿na routowaæ z exchnage do innego exchange, zmiast kolejki.
+
+ThreadSave<T> - przechowuje kopie zmiennej dla w¹tku. Drugi w¹tek ma inn¹ instancjê.
