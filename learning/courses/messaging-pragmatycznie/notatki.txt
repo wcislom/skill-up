@@ -96,8 +96,14 @@ np. #.deleted -> order.deleted, product.deleted, one.two.three.deleted.
 
 Alternate Exchange - jest to exchange u¿ywany, gdy nie dopasowano ¿adnego adresata w danym exchangu. Jest to taki fallback.
 
-Exchange to Exchnage - mo¿na routowaæ z exchnage do innego exchange, zmiast kolejki.
+Exchange to Exchnage - mo¿na routowaæ z exchnage do innego exchange, zamiast kolejki.
 
 ThreadSave<T> - przechowuje kopie zmiennej dla w¹tku. Drugi w¹tek ma inn¹ instancjê.
 
-AMQP Default - domyœlna wymiana dla utworzonych kolejek. Upraszcza topologiê, jeœli nie potrzebujemy nic nadzwyczajnego. Jeœli podczas publikowania nie podamy wymiany, to trafi wiadomoœæ na domyœn¹ wymianê.
+AMQP Default - domyœlna wymiana dla utworzonych kolejek. Upraszcza topologiê, jeœli nie potrzebujemy nic nadzwyczajnego. Jeœli podczas publikowania nie podamy wymiany, to trafi wiadomoœæ na domyœln¹ wymianê.
+
+MODU£ 8
+pull vs push - modele konsumowania
+
+pull polega na ci¹g³ym odpytywaniu Brokera, co wysyca sieæ, jest niezalecane. Jednak s¹ przypadki, gdzie mo¿e siê to przydaæ.
+push polega na wypchniêciu wiadomoœci do konsumenta w momencie gdy jest wiadomoœæ
