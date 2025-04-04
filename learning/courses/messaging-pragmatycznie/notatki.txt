@@ -105,5 +105,6 @@ AMQP Default - domyœlna wymiana dla utworzonych kolejek. Upraszcza topologiê, je
 MODU£ 8
 pull vs push - modele konsumowania
 
+
 pull polega na ci¹g³ym odpytywaniu Brokera, co wysyca sieæ, jest niezalecane. Jednak s¹ przypadki, gdzie mo¿e siê to przydaæ.
 push polega na wypchniêciu wiadomoœci do konsumenta w momencie gdy jest wiadomoœæ
