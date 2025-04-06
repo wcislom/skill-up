@@ -110,3 +110,5 @@ pull polega na ci¹g³ym odpytywaniu Brokera, co wysyca sieæ, jest niezalecane. Je
 push polega na wypchniêciu wiadomoœci do konsumenta w momencie gdy jest wiadomoœæ
 
 MULTIPLEKSING - przesy³anie wielu sygna³ów jednym transportem.
+
+Client-Side Filtering? - robisz ifa po stronie konsumenta, jeœli typ message jes ok, to go ogargniasz, jeœli nie, to sciagaasz z kolejki nic nie robi¹æ.
