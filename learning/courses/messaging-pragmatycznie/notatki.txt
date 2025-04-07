@@ -112,3 +112,6 @@ push polega na wypchniêciu wiadomoœci do konsumenta w momencie gdy jest wiadomoœ
 MULTIPLEKSING - przesy³anie wielu sygna³ów jednym transportem.
 
 Client-Side Filtering? - robisz ifa po stronie konsumenta, jeœli typ message jes ok, to go ogargniasz, jeœli nie, to sciagaasz z kolejki nic nie robi¹æ.
+
+Rozdzielanie wiadomoœci 
+- competing consumers - RabitMq rozdziela po równo wiadomoœci do ka¿dego konsumenta.
