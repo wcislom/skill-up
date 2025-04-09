@@ -119,3 +119,6 @@ Rozdzielanie wiadomoœci
 Rozszezrzanie dynamiczne logiki handlera:
 - Pipe and filters - rejestrujemy logiki do odpalenia wiadomoœci
 - decorator - opakowujemy handler w inny handler
+
+B³êdna topologia to te same konsekwencje co b³êdna tabela lub b³êdna klasa.
+Warto napisaæ tak, by topologia tworzy³a siê sama, na starcie aplikacji.
