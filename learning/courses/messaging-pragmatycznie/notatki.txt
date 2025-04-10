@@ -111,14 +111,19 @@ push polega na wypchniêciu wiadomoœci do konsumenta w momencie gdy jest wiadomoœ
 
 MULTIPLEKSING - przesy³anie wielu sygna³ów jednym transportem.
 
-Client-Side Filtering? - robisz ifa po stronie konsumenta, jeœli typ message jes ok, to go ogargniasz, jeœli nie, to sciagaasz z kolejki nic nie robi¹æ.
+Client-Side Filtering? - robisz ifa po stronie konsumenta, jeœli typ message jes ok, to go ogargniasz, jeœli nie, to sciagaasz z kolejki nic nie robi¹c.
 
 Rozdzielanie wiadomoœci 
-- competing consumers - RabitMq rozdziela po równo wiadomoœci do ka¿dego konsumenta, tak jak w rozgrywce w karty.
+- competing consumers - RabitMq rozdziela po równo wiadomoœci do ka¿dego konsumenta kolejki, tak jak w rozgrywce w karty.
+- ¿eby ka¿da instancja dosta³a kopiê wiadomoœci, to musi byæ kolejka, np. tymczasowa, która znika, gdy instancja zostanie ubita.
 
-Rozszezrzanie dynamiczne logiki handlera:
+Rozszerzanie dynamiczne logiki handlera:
 - Pipe and filters - rejestrujemy logiki do odpalenia wiadomoœci
 - decorator - opakowujemy handler w inny handler
 
 B³êdna topologia to te same konsekwencje co b³êdna tabela lub b³êdna klasa.
 Warto napisaæ tak, by topologia tworzy³a siê sama, na starcie aplikacji.
+
+Message TTL - usuwa wiadomoœci starsze ni¿... Przydatne w wiadomoœciach
+
+
