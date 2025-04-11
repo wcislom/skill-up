@@ -125,5 +125,6 @@ B³êdna topologia to te same konsekwencje co b³êdna tabela lub b³êdna klasa.
 Warto napisaæ tak, by topologia tworzy³a siê sama, na starcie aplikacji.
 
 Message TTL - usuwa wiadomoœci starsze ni¿... Przydatne w wiadomoœciach
+...
 
 
