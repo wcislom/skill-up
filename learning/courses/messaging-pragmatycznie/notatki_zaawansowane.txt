@@ -1,0 +1,11 @@
+MODELE DOSTARCZANIA WIADOMOŚCI
+
+ACK - acknowldegment, czyli potwierdzenie odebrania, wraz z DeliveryTag, który jest częścią wiadomości. DeliveryTag jest inkrementowany i unikalny per channel
+
+1. At least once delivery - po pobraniu wiadomości jest w stani UnACK, i konsument musi wysłać ACK. Jeśli się to nie wydarzy, wiadomość wraca do Rabbita i ma flagę Undelivered=true. W tym modelu mogą zdarzyć się duplikaty, ale mamy pewność, że wiadomość nie zostanie utracona.
+
+
+2. At Most once delivery - wiadomość od razu spada z Rabbita. Jest to szybszy sposób komunikacji, ale podatny na utratę wiadomości.
+Przydatny w sytuacji, gdzie nie wszystkie wiadomości muszą być dostarczone:
+- dużej ilości wiadomości telemetrycznych
+- wiadomościach trendu, np. aktualny stan czujnika
