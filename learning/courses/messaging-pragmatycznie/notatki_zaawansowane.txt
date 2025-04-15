@@ -9,3 +9,11 @@ ACK - acknowldegment, czyli potwierdzenie odebrania, wraz z DeliveryTag, który 
 Przydatny w sytuacji, gdzie nie wszystkie wiadomości muszą być dostarczone:
 - dużej ilości wiadomości telemetrycznych
 - wiadomościach trendu, np. aktualny stan czujnika
+
+Exact once delivery to ściema - problem dwóch generałów.
+
+
+DEDUPLIKACJA
+
+- exactly one processing i idempotentość na poziomie biznesowym
+- staraj się tworzyć kod, który biznesowo jest odporny na duplikacje, np. if sprawdzający, czy coś istnieje w bazie
