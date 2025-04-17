@@ -19,3 +19,5 @@ DEDUPLIKACJA
 - staraj się tworzyć kod, który biznesowo jest odporny na duplikacje, np. if sprawdzający, czy coś istnieje w bazie
 
 Pomysł na exactly once delivery: konsument przechowuje rejest przetworzonych wiadomości. Zapisuje, że wiadomość o danym MessageId została przetworzona, gdy handler zakończy pracę. Wszystko jest spięte tranzakcją. Minusem jest to, że dane w tabeli puchną, więc trzeba je usuwać.
+
+.
