@@ -1,0 +1,1 @@
+1. Pamiętaj, że producent też musi mieć obsługę błędów, żeby nie zgubić nadawanej wiadomości.
