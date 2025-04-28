@@ -4,4 +4,7 @@ Ponawianie wysyłki
 - można ponawiać do skutku co 1s
 - można ponawiać z odstępami wykładniczymi, 2s, 4s, 8s itd.
 - jak n nieudanych wysyłkach, trzeba wiadomość przekazać na inną kolejkę, albo wygenerować wiadomość, że się nie udało. Ta wiadomość może być wykorzystana w systemie.
-.....….
+
+Polly - do resiliency można wykorzystać biblioteki Polly
+- 3 próby wysyłki po stronie brokera
+- 3 próby przetworzenia po stronie klienta
