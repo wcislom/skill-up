@@ -8,3 +8,6 @@ Ponawianie wysyłki
 Polly - do resiliency można wykorzystać biblioteki Polly
 - 3 próby wysyłki po stronie brokera
 - 3 próby przetworzenia po stronie klienta
+
+Poison messages można przekierować na dead-letter-queue
+Parametr x-dead-letter-exchange
