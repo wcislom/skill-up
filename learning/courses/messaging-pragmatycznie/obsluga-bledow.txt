@@ -11,3 +11,6 @@ Polly - do resiliency można wykorzystać biblioteki Polly
 
 Poison messages można przekierować na dead-letter-queue
 Parametr x-dead-letter-exchange
+
+Innym podejściem (komplementarnym) jest opakowanie problematycznej wiadomości w Fault<T>, który zawiera dodatkowe informacje o problemach, i opublikowanie w świat. Potraktowanie sytuacji jako jakiegoś case biznesowego, na który trzeba zareagować.
+
