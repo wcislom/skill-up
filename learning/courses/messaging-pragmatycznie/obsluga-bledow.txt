@@ -14,3 +14,8 @@ Parametr x-dead-letter-exchange
 
 Innym podejściem (komplementarnym) jest opakowanie problematycznej wiadomości w Fault<T>, który zawiera dodatkowe informacje o problemach, i opublikowanie w świat. Potraktowanie sytuacji jako jakiegoś case biznesowego, na który trzeba zareagować.
 
+A jak wykryć brak konsumenta przez producenta?
+
+Co zrobić przy błędzie zapisu do kolejki?
+1. Usunąć najstarszą wiadomość
+2. W ogóle nie zapisać i rzucić błędem
