@@ -19,8 +19,7 @@ A jak wykryć brak konsumenta przez producenta?
 Co zrobić przy błędzie zapisu do kolejki? (overflow w rabbit MQ:)
 1. Usunąć najstarszą wiadomość - drop-head
 2. W ogóle nie zapisać i rzucić błędem - reject-publish
-
-publisher-confirms? - oczekujemy ack lub nack od brokera.
-
-channel.WaitForConfirmsOrDie - nie ma potwierdzenia to koniec przetwarzania
+Albo inaczej, oprogramować to:
+    publisher-confirms - oczekujemy ack lub nack od brokera.
+    channel.WaitForConfirmsOrDie - nie ma potwierdzenia to koniec przetwarzania
 
