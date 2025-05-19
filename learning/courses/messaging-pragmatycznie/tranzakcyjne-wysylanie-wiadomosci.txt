@@ -1,0 +1,4 @@
+Problemem jest wysyłanie wiadomości bez względu na to, czy transakcja bazodanowa się powiodła, czy nie.
+Publikowanie wiadomości musi odbywać się w ramach tej samej transakcji bazodanowej, co zapis. -> outbox pattern
+
+Outbox pattern -  w jednej transakcji zapisujemy dane i wiadomość do wysyłki w dedykowanej tabeli outbox. Potem inny proces w tle skanuje tabele i wysyła wiadomości, a jak się uda, oznacza je jako wysłane.
